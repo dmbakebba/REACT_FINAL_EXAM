@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { useState } from "react"
+import Button from "./Components/Button";
+import Header from "./Components/Header";
+import Services from "./Components/Services";
+
+const App=()=> {
+
+  const [services,setServices]=useState([
+    {
+      id:'1',
+      logo:'',
+      heading:'product design ',
+      text:'let me help you to forcus on the core of web validate the design solution beacuse react is very marketable in the in dustry now'
+    },
+    {
+      id:'2',
+      logo:'',
+      heading:'front-end engineering ',
+      text:'let me help you to forcus on the core of web validate the design solution beacuse react is very marketable in the in dustry now'
+    },
+    {
+      id:'3',
+      logo:'',
+      heading:'teaching',
+      text:'let me help you to forcus on the core of web validate the design solution beacuse react is very marketable in the in dustry now'
+    }
+  ])
+   
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Services  services={services}/>
+
+       
+      <Button />
     </div>
   );
 }
