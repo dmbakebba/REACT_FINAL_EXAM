@@ -1,31 +1,18 @@
 
-import { useState } from "react"
+import axios from "axios";
+import { useState,useEffect } from "react"
 import Button from "./Components/Button";
 import Header from "./Components/Header";
 import Services from "./Components/Services";
 
 const App=()=> {
+useEffect(()=>{
+  axios.get(' http://localhost:5000/services').then(response=>{
+   setServices(response.data) 
+  })
+},[])
 
-  const [services,setServices]=useState([
-    {
-      id:'1',
-      logo:'',
-      heading:'product design ',
-      text:'let me help you to forcus on the core of web validate the design solution beacuse react is very marketable in the in dustry now'
-    },
-    {
-      id:'2',
-      logo:'',
-      heading:'front-end engineering ',
-      text:'let me help you to forcus on the core of web validate the design solution beacuse react is very marketable in the in dustry now'
-    },
-    {
-      id:'3',
-      logo:'',
-      heading:'teaching',
-      text:'let me help you to forcus on the core of web validate the design solution beacuse react is very marketable in the in dustry now'
-    }
-  ])
+  const [services,setServices]=useState([])
    
   return (
     <div className="App">

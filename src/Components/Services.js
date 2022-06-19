@@ -4,7 +4,7 @@ const Services = ({ services }) => {
   return (
     <div className='services'>
        {services.map((service)=>{
-         return  <SingleService  service={service}/>
+         return  <SingleService key={service.id}  service={service}/>
        }
 
        )}
